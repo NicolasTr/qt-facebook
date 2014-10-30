@@ -5,7 +5,19 @@
 ########################################################################################################################
 
 sudo apt-get update
-sudo apt-get install -y wget python-software-properties build-essential libgd2-xpm ia32-libs ia32-libs-multiarch
+sudo apt-get install -y wget 
+
+if lsb_release -a | grep 12.04
+then
+    sudo apt-get install -y python-software-properties
+    sudo apt-get install -y build-essential libgd2-xpm ia32-libs ia32-libs-multiarch
+else
+    sudo apt-get install -y software-properties-common    
+    
+    sudo dpkg --add-architecture i386
+    sudo apt-get update    
+    sudo apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386
+fi
 
 # Java
 sudo add-apt-repository ppa:webupd8team/java -y
@@ -20,16 +32,22 @@ sudo apt-get install -y expect xvfb libxrender-dev libfontconfig-dev xdotool lib
 # Android NDK
 ########################################################################################################################
 
-wget -c http://dl.google.com/android/ndk/android-ndk-r9d-linux-x86_64.tar.bz2 -O android-ndk-r9d-linux-x86_64.tar.bz2
-tar xf android-ndk-r9d-linux-x86_64.tar.bz2 --no-same-owner
-mv android-ndk-r9d android-ndk
+ANDROID_NDK_VERSION=r9d
+
+wget -c http://dl.google.com/android/ndk/android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2 -O android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2
+tar xf android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2 --no-same-owner
+mv android-ndk-${ANDROID_NDK_VERSION} android-ndk
 
 ########################################################################################################################
 # Android SDK
 ########################################################################################################################
 
-wget -c http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz -O android-sdk_r23.0.2-linux.tgz
-tar xf android-sdk_r23.0.2-linux.tgz --no-same-owner
+ANDROID_SDK_VERSION=r23.0.2
+ANDROID_API_LEVEL=19
+ANDROID_BUILD_TOOLS_VERSION=21.0.2
+
+wget -c http://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz -O android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
+tar xf android-sdk_${ANDROID_SDK_VERSION}-linux.tgz --no-same-owner
 mv android-sdk-linux android-sdk
 
 function install-android-package {
@@ -49,18 +67,21 @@ function install-android-package {
 }
 
 install-android-package platform-tools
-install-android-package build-tools-21.0.2
-install-android-package android-19
-install-android-package addon-google_apis-google-19
-#install-android-package sys-img-x86-android-19
+install-android-package build-tools-${ANDROID_BUILD_TOOLS_VERSION}
+install-android-package android-${ANDROID_API_LEVEL}
+install-android-package addon-google_apis-google-${ANDROID_API_LEVEL}
+#install-android-package sys-img-x86-android-${ANDROID_API_LEVEL}
 
 ########################################################################################################################
 # Qt
 ########################################################################################################################
 
-wget -c http://download.qt-project.org/official_releases/qt/5.3/5.3.2/qt-opensource-linux-x64-android-5.3.2.run \
-     -O qt-opensource-linux-x64-android-5.3.2.run
-chmod +x qt-opensource-linux-x64-android-5.3.2.run
+QT_VERSION=5.3.2
+QT_VERSION_SHORT=$(echo ${QT_VERSION} | sed -E "s/[.][0-9]+$//g")
+
+wget -c http://download.qt-project.org/official_releases/qt/${QT_VERSION_SHORT}/${QT_VERSION}/qt-opensource-linux-x64-android-${QT_VERSION}.run \
+     -O qt-opensource-linux-x64-android-${QT_VERSION}.run
+chmod +x qt-opensource-linux-x64-android-${QT_VERSION}.run
 
 # Start the display
 Xvfb :1 -screen 0 1024x768x8 & 
@@ -68,7 +89,7 @@ sleep 3
 export DISPLAY=':1'
 
 # Start the installer
-qt-opensource-linux-x64-android-5.3.2.run & 
+qt-opensource-linux-x64-android-${QT_VERSION}.run & 
 
 # Go through it
 sleep 3 \
@@ -91,10 +112,10 @@ sleep 3 \
     && killall qtcreator || true
 
 rm -rf Qt
-if [ -d /opt/Qt5.3.2 ]
+if [ -d /opt/Qt${QT_VERSION} ]
 then
-    ln -f -s /opt/Qt5.3.2 Qt
+    ln -f -s /opt/Qt${QT_VERSION} Qt
 else
-    ln -f -s ~/Qt5.3.1 Qt 
+    ln -f -s ~/Qt${QT_VERSION} Qt 
 fi
 
