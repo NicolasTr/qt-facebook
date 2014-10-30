@@ -6,5 +6,5 @@ install:
     - ./scripts/dependencies-${UNAME}.sh
     - ./scripts/dependencies.sh
 script:
-    - echo "Hello World!"
+    - ./scripts/build.sh
 

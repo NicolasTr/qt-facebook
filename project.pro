@@ -1,0 +1,2 @@
+TARGET = ntrfacebook
+TEMPLATE = lib
