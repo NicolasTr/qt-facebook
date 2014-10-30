@@ -83,10 +83,10 @@ sleep 3 \
     && sleep 3 \
     && killall qtcreator || true
 
-rm -rf Qt
+rm -rf ~/Qt
 if [ -d /opt/Qt${QT_VERSION} ]
 then
-    ln -f -s /opt/Qt${QT_VERSION} Qt
+    ln -f -s /opt/Qt${QT_VERSION} ~/Qt
 else
-    ln -f -s ~/Qt${QT_VERSION} Qt 
+    ln -f -s ~/Qt${QT_VERSION} ~/Qt 
 fi
