@@ -1,0 +1,8 @@
+os:
+    - linux
+    - osx
+install:
+    - ./scripts/dependencies-linux.sh
+script:
+    - echo "Hello World!"
+
