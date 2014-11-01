@@ -61,7 +61,7 @@ sleep 3
 export DISPLAY=':1'
 
 # Start the installer
-qt-opensource-linux-x64-android-${QT_VERSION}.run & 
+./qt-opensource-linux-x64-android-${QT_VERSION}.run & 
 
 # Go through it
 sleep 3 \
