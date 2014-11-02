@@ -1,6 +1,7 @@
 #!/bin/bash -ex
 
-export ANDROID_NDK_ROOT=$(pwd)/android-ndk
+export ANDROID_NDK_ROOT=$(pwd)/vendor/android-ndk
+cd $1
 
 function build {
 	QMAKE=$(find ~/ | grep $1/bin/qmake | head -n 1)

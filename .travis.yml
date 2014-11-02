@@ -2,9 +2,7 @@ os:
     - linux
     - osx
 install:
-    - UNAME=$(uname | tr '[:upper:]' '[:lower:]')
-    - ./scripts/dependencies-${UNAME}.sh
-    - ./scripts/dependencies.sh
+    - ./dependencies.sh
 script:
-    - ./scripts/build.sh
+    - ./build.sh
 
