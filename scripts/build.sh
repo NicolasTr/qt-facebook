@@ -5,13 +5,14 @@ cd $1
 
 function build {
 	QMAKE=$(find ~/ | grep $1/bin/qmake | head -n 1)
-    mkdir -p build/android-$1
+    mkdir -p build/$1
     
-    cd build/android-$1
+    cd build/$1
     ${QMAKE} ../../project.pro
     make
-    cd ..
+    cd ../..
 }
 
 build android_armv7
+build gcc_64
 
