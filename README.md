@@ -1,12 +1,14 @@
 Description
 ======================
 
-Facebook plugin fot Qt
+Facebook plugin fot Qt.
+
+Work in progress.
 
 Status
 ======
 
-| Build system| Status                                                                                                                                                                       | Android | iOS |
-|:-----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:---:|
-| CircleCI    | [![Circle CI](https://circleci.com/gh/NicolasTr/qt-plugin-ntr-facebook/tree/develop.png?style=badge)](https://circleci.com/gh/NicolasTr/qt-plugin-ntr-facebook/tree/develop) |   yes   |     |
-| Manual      |                                                                                                                                                                              |         | yes |
+| Build system| Status                                                                                                                                                               | Android | iOS |
+|:-----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:---:|
+| CircleCI    | [![Circle CI](https://circleci.com/gh/NicolasTr/qt-plugin-facebook/tree/develop.png?style=badge)](https://circleci.com/gh/NicolasTr/qt-plugin-facebook/tree/develop) |   yes   |     |
+| Manual      |                                                                                                                                                                      |         |  ?  |

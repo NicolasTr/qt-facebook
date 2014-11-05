@@ -1,4 +1,4 @@
-TARGET = ntrfacebookpluginexample
+TARGET = facebook-example
 TEMPLATE = app
 
 CONFIG += qt

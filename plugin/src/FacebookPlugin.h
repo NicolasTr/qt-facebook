@@ -1,11 +1,11 @@
-#ifndef NTR_FACEBOOK_PLUGIN_H
-#define NTR_FACEBOOK_PLUGIN_H
+#ifndef FACEBOOK_PLUGIN_H
+#define FACEBOOK_PLUGIN_H
 
 #include <QQmlExtensionPlugin>
 
 namespace net { namespace nicolastr { namespace qt { namespace plugins {
 
-class NtrFacebookPlugin : public QQmlExtensionPlugin {
+class FacebookPlugin : public QQmlExtensionPlugin {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
 
@@ -16,4 +16,4 @@ public:
 
 }}}}
 
-#endif // NTR_FACEBOOK_PLUGIN_H
+#endif // FACEBOOK_PLUGIN_H

@@ -1,4 +1,4 @@
-TARGET = ntrfacebookplugin
+TARGET = facebook
 TEMPLATE = lib
 
 CONFIG += qt plugin
