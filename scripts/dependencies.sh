@@ -72,6 +72,8 @@ export DISPLAY=':1'
 # Go through it
 sleep 3 \
     && xdotool key Return && sleep 10 \
+    && xdotool key ctrl+a && sleep 1 \
+    && xdotool type $(pwd)/Qt && sleep 1 \
     && xdotool key Return && sleep 1 \
     && xdotool key Down && sleep 1 \
     && xdotool key space && sleep 2 \
@@ -88,11 +90,3 @@ sleep 3 \
     && while ps | grep qt-opensource > /dev/null; do sleep 1; xdotool key alt+f; printf "."; done \
     && sleep 3 \
     && killall qtcreator || true
-
-rm -rf ~/Qt
-if [ -d /opt/Qt${QT_VERSION} ]
-then
-    ln -f -s /opt/Qt${QT_VERSION} ~/Qt
-else
-    ln -f -s ~/Qt${QT_VERSION} ~/Qt 
-fi

@@ -2,11 +2,12 @@
 
 export ANDROID_NDK_ROOT=$(pwd)/vendor/android-ndk
 export ANDROID_SDK_ROOT=$(pwd)/vendor/android-sdk
+export QT_ROOT=$(pwd)/vendor/Qt
 cd $1
 
 function build {
-	QMAKE=$(find ~/ | grep $1/bin/qmake | head -n 1)
-    ANDROID_DEPLOY_QT=$(find ~/ | grep $1/bin/androiddeployqt | head -n 1 || true)
+    QMAKE=$(find ${QT_ROOT} | grep $1/bin/qmake | head -n 1)
+    ANDROID_DEPLOY_QT=$(find ${QT_ROOT} | grep $1/bin/androiddeployqt | head -n 1 || true)
     mkdir -p build/$1
     
     cd build/$1
