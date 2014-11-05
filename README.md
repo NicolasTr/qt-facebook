@@ -6,7 +6,7 @@ Facebook plugin fot Qt
 Status
 ======
 
-| Build system| Status                                                                                                                                               | Android | iOS |
-|:-----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:---:|
-| Travis      | [![Build Status](https://travis-ci.org/NicolasTr/qt-plugin-ntr-facebook.svg?branch=develop)](https://travis-ci.org/NicolasTr/qt-plugin-ntr-facebook) |   yes   |     |
-| Manual      |                                                                                                                                                      |         | yes |
+| Build system| Status                                                                                                                                                                       | Android | iOS |
+|:-----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:---:|
+| CircleCI    | [![Circle CI](https://circleci.com/gh/NicolasTr/qt-plugin-ntr-facebook/tree/develop.png?style=badge)](https://circleci.com/gh/NicolasTr/qt-plugin-ntr-facebook/tree/develop) |   yes   |     |
+| Manual      |                                                                                                                                                                              |         | yes |

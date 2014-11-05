@@ -1,0 +1,4 @@
+dependencies: 
+  override:
+    - ./dependencies.sh
+    - ./build.sh
