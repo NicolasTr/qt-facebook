@@ -12,6 +12,7 @@ ANDROID_NDK_VERSION=r9d
 wget -c http://dl.google.com/android/ndk/android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2 -O android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2
 tar xf android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2 --no-same-owner
 mv android-ndk-${ANDROID_NDK_VERSION} android-ndk
+rm android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.tar.bz2
 
 ########################################################################################################################
 # Android SDK
@@ -24,6 +25,7 @@ ANDROID_BUILD_TOOLS_VERSION=21.0.2
 wget -c http://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz -O android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
 tar xf android-sdk_${ANDROID_SDK_VERSION}-linux.tgz --no-same-owner
 mv android-sdk-linux android-sdk
+rm android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
 
 function install-android-package {
         expect -c "
@@ -90,3 +92,5 @@ sleep 3 \
     && while ps | grep qt-opensource > /dev/null; do sleep 1; xdotool key alt+f; printf "."; done \
     && sleep 3 \
     && killall qtcreator || true
+
+rm qt-opensource-linux-x64-android-${QT_VERSION}.run
