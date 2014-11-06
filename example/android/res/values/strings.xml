@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Qt Facebook Plugin Demo</string>
+
+    <string name="fatal_error_msg">Your application encountered a fatal error and cannot continue.</string>
+</resources>
