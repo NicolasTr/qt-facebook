@@ -1,5 +1,7 @@
 Description
-======================
+===========
+
+![qt-plugin-facebook](icon-128x128.png)
 
 Facebook plugin fot Qt.
 

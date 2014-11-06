@@ -9,3 +9,5 @@ git clone --branch sdk-version-${FACEBOOK_SDK_VERSION} https://github.com/facebo
 git clone --branch sdk-version-${FACEBOOK_SDK_VERSION} https://github.com/facebook/facebook-ios-sdk.git
 ./android-sdk/tools/android update project --subprojects --target android-9 --path facebook-android-sdk/facebook
 cd ..
+
+./icon.sh
