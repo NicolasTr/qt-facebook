@@ -28,5 +28,6 @@ function build {
 }
 
 build android_armv7
+build android_x86
 build gcc_64
 
