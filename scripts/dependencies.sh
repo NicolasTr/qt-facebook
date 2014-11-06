@@ -47,7 +47,7 @@ install-android-package platform-tools
 install-android-package build-tools-${ANDROID_BUILD_TOOLS_VERSION}
 install-android-package android-${ANDROID_API_LEVEL}
 install-android-package addon-google_apis-google-${ANDROID_API_LEVEL}
-#install-android-package sys-img-x86-android-${ANDROID_API_LEVEL}
+install-android-package sys-img-x86-android-${ANDROID_API_LEVEL}
 
 install-android-package android-9
 install-android-package addon-google_apis-google-9
