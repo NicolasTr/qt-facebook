@@ -3,6 +3,9 @@
 sudo apt-get update
 sudo apt-get install -y wget 
 
+# Icon
+sudo apt-get install -y imagemagick libmagickcore5 libmagickwand5 librsvg2-bin libfftw3-double3
+
 if lsb_release -a | grep 12.04
 then
     sudo apt-get install -y python-software-properties

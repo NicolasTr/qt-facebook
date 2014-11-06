@@ -3,8 +3,6 @@
 DIR=$(pwd)
 cd /tmp
 
-sudo apt-get install -y imagemagick librsvg2-bin
-
 wget -c http://upload.wikimedia.org/wikipedia/en/7/75/Qt-logo.svg -O ${DIR}/images/Qt-logo.svg
 convert ${DIR}/images/Qt-logo.svg -resize 859x1024 Qt-logo-859x1024.png
 convert Qt-logo-859x1024.png -background transparent -gravity center -extent 1024x1024 Qt-logo-1024x1024.png
