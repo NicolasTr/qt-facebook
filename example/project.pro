@@ -2,7 +2,7 @@ TARGET = facebook-example
 TEMPLATE = app
 
 CONFIG += qt
-QT += qml
+QT += qml quick
 
 DESTDIR = dist
 
