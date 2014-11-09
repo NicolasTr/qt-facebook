@@ -1,4 +1,5 @@
 #!/bin/bash -ex
+mkdir -p vendor && cd vendor
 
 ANDROID_NDK_VERSION=r9d
 

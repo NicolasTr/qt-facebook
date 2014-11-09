@@ -1,4 +1,5 @@
 #!/bin/bash -ex
+mkdir -p vendor && cd vendor
 
 ANDROID_SDK_VERSION=r23.0.2
 ANDROID_API_LEVEL=18

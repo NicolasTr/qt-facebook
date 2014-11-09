@@ -1,6 +1,10 @@
 dependencies: 
   override:
-    - ./dependencies.sh
+    - ./scripts/dependencies-$(uname | tr '[:upper:]' '[:lower:]').sh
+    - ./scripts/install-ndk.sh
+    - ./scripts/install-sdk.sh
+    - ./scripts/install-qt.sh
+    - ./scripts/install-facebook-sdk.sh
     - ./build.sh
 test:
   override:

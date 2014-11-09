@@ -1,4 +1,5 @@
 #!/bin/bash -ex
+mkdir -p vendor && cd vendor
 
 QT_VERSION=5.3.2
 QT_VERSION_SHORT=$(echo ${QT_VERSION} | sed -E "s/[.][0-9]+$//g")
