@@ -22,7 +22,7 @@ function build {
             --input ${DEPLOYMENT_SETTINGS} \
             --output android \
             --release \
-            --android-platform android-19  # Should use ${ANDROID_API_LEVEL}
+            --android-platform android-18  # Should use ${ANDROID_API_LEVEL}
     fi
     cd ../..
 }

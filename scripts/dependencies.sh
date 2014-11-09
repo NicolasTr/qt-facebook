@@ -18,7 +18,7 @@ mv android-ndk-${ANDROID_NDK_VERSION} android-ndk
 ########################################################################################################################
 
 ANDROID_SDK_VERSION=r23.0.2
-ANDROID_API_LEVEL=19
+ANDROID_API_LEVEL=18
 ANDROID_BUILD_TOOLS_VERSION=21.0.2
 
 wget -c http://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz -O android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
